@@ -46,3 +46,18 @@ void lcd_print_line_str_float(uint8_t line, char8* str_in, float number) {
     LCD_Char_1_Position(line, 0);
     LCD_Char_1_PrintString(str);
 }
+
+
+void lcd_print_line_str_int16(uint8_t line, char8* str_in, int16 number) {
+
+    char8 str[21] = {0};
+    sprintf(str, "%s %d", str_in, number);
+
+    // blank line
+    LCD_Char_1_Position(line, 0);
+    LCD_Char_1_PrintString("                    ");
+
+    // print line
+    LCD_Char_1_Position(line, 0);
+    LCD_Char_1_PrintString(str);
+}
